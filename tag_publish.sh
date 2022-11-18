@@ -69,7 +69,7 @@ pushSpecCommit() {
     echo ">>>> PUSH SPEC MODIFICATIONS"
     git checkout -b $PUBLISH_BRANCH
     git add -u
-    git commit -am "chore: [Release version] $TAG_FORMATTED --story=10241024"
+    git commit -am "chore: [Release version] $TAG_FORMATTED"
     git push -q -u origin $PUBLISH_BRANCH
 }
 
@@ -121,7 +121,6 @@ else
         fi
     fi
 
-    # 提交修改，删除之前的临时tag，重新发布
     pushSpecCommit
     # deleteTag
     addTag
